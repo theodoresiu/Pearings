@@ -85,8 +85,10 @@
    <tr>
           {% for i in item_set %}
           <td><b> {{i|join(', ')}}</b> </td><td> 
-{% if rules[loop.index0]['first'] %}
+{% if rules[loop.index0] %}
+{% if rules[loop.index0]['first']%}
 <b>ProTip:</b> In {{rules[loop.index0]['percentage']}}% of observed recipes containing the following: {{rules[loop.index0]['first']}}, they also contained  {{rules[loop.index0]['second']}}
+{% endif %}
 {% endif %} 
 </td>
 

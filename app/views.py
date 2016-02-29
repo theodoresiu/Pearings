@@ -77,7 +77,7 @@ def index():
 @app.route('/output')
 def cities_output():
     print('Hello')
-    city = request.args.get('ID')
+    city = request.args.get('ID').lower().rstrip(',')
     if city=="":
         return render_template("error.html")
     ing_type=request.args.get('type')
@@ -159,6 +159,6 @@ def cities_output():
                         print('Our apologies the culinary skills are limited')
 
 
-
+    print(rules)
     return render_template("output.html",item_set=item_set, rules=rules,results=results)
 
